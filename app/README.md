@@ -1,0 +1,2 @@
+- [Navigation best practices for multi-module projects](https://developer.android.com/guide/navigation/navigation-multi-module)
+- [Create a deep link for a destination](https://developer.android.com/guide/navigation/navigation-deep-link?hl=en)
