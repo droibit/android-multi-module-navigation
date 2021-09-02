@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id "androidx.navigation.safeargs.kotlin"
 }
@@ -8,11 +8,14 @@ android {
     compileSdk rootProject.ext.compileSdk
 
     defaultConfig {
-        applicationId "com.example.android.navigations"
         minSdk rootProject.ext.minSdk
         targetSdk rootProject.ext.targetSdk
-        versionCode 1
-        versionName "1.0"
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        buildConfig = false
     }
 
     buildTypes {
@@ -21,19 +24,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
 }
 
 dependencies {
-    implementation project(":module1")
-    implementation project(":module2")
-
     implementation "androidx.core:core-ktx:${versions.androidx.core}"
     implementation "androidx.appcompat:appcompat:${versions.androidx.appcompat}"
     implementation "androidx.fragment:fragment-ktx:${versions.androidx.fragment}"
